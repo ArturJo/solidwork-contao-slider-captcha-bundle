@@ -41,8 +41,6 @@ Wenn du den Contao Manager verwendest, kannst du das Bundle dort suchen und inst
 3. Ein neues Formularfeld vom Typ **Slider Captcha** hinzufügen (bereitgestellt durch dieses Bundle).
 4. Feld speichern und Formular sichern.
 
-> Passe die exakte Bezeichnung des Feldtyps in der Dokumentation an die tatsächlich im Backend sichtbaren Namen an (z. B. basierend auf `SliderCaptchaField`).
-
 ### 2. Validierung
 
 Die Validierung erfolgt serverseitig über den bereitgestellten Validator (z. B. `SliderCaptchaValidator`).
@@ -50,7 +48,21 @@ Die Validierung erfolgt serverseitig über den bereitgestellten Validator (z. 
 - Ist das Captcha nicht oder falsch gelöst, bleibt das Formular auf der Seite.
 - Eine entsprechende Fehlermeldung wird im Formular angezeigt.
 
-### 3. Frontend‑Assets & Anpassung
+### 3. Template & Ausgabe im Frontend
+
+Das Formularfeld wird über ein eigenes Contao-Template gerendert:
+
+- Standard-Template: `form_slider_captcha.html5`
+- Speicherort im Bundle: `src/Resources/contao/templates/form_slider_captcha.html5`
+
+Dadurch wird das Feld vollständig in den üblichen Contao-Template-Flow eingebunden. Du kannst das Markup wie gewohnt anpassen:
+
+1. Lege im Projektordner `contao/templates` eine eigene Datei an, z. B. `form_slider_captcha.html5` oder ein benutzerdefiniertes Template wie `form_slider_captcha_custom.html5`.
+2. Wähle im Contao-Backend beim Formularfeld unter **Template** das gewünschte Template aus (falls du ein `customTpl` verwenden möchtest).
+
+Im Template stehen dir u. a. die Standard-Widget-Variablen zur Verfügung (z. B. `$this->name`, `$this->id`). Das Bundle registriert außerdem automatisch die benötigten JavaScript- und CSS-Dateien für den Slider.
+
+### 4. Frontend‑Assets & Anpassung
 
 Die Frontend‑Assets (SCSS & TypeScript) liegen im Projekt und werden zu produktiven Assets kompiliert.
 
@@ -64,7 +76,7 @@ Du kannst die Styles und das Verhalten des Sliders anpassen, indem du:
 
 - eigene SCSS‑Dateien erweiterst/überschreibst,
 - eigenes JavaScript/TypeScript hinzufügst oder anpasst,
-- Templates in `contao/templates` überschreibst.
+- Templates in `contao/templates` überschreibst (insbesondere `form_slider_captcha.html5`).
 
 ## Entwicklung
 
@@ -75,8 +87,6 @@ Wenn du am Bundle mitentwickeln möchtest, kannst du die Frontend‑Assets lokal
 ```bash
 cd assets
 npm install
-# oder
-# yarn install
 ```
 
 ### 2. TypeScript bauen
@@ -93,30 +103,6 @@ npm run build
 
 Passe die Befehle an die tatsächlichen Scripts in deiner `assets/package.json` an.
 
-## Tests
-
-Sofern Tests für dieses Bundle vorhanden sind, kannst du sie z. B. mit PHPUnit ausführen:
-
-```bash
-vendor/bin/phpunit
-```
-
-Füge hier bei Bedarf konkrete Hinweise zu vorhandenen Test-Suites oder Befehlen ein.
-
-## Verzeichnisstruktur (Auszug)
-
-```text
-assets/               # Frontend-Assets (TS/SCSS, Build-Konfiguration)
-config/               # Symfony/Contao Service-Konfiguration
-contao/               # DCA, Sprachdateien, Templates, Formulare
-src/                  # PHP-Code des Bundles
-  ├─ ContaoManager/   # Contao Manager Plugin (Registrierung des Bundles)
-  ├─ FormField/       # Formularfeld-Klassen (z. B. SliderCaptchaField)
-  ├─ Validator/       # Validatoren (z. B. SliderCaptchaValidator)
-  └─ Resources/       # Öffentliche Assets & weitere Ressourcen
-public/slider-captcha # Ausgelieferte, ggf. gebaute Frontend-Assets
-```
-
 ## Support & Issues
 
 Bei Fehlern, Fragen oder Feature‑Requests bitte ein GitHub‑Issue im öffentlichen Repository eröffnen:
@@ -130,4 +116,8 @@ Bitte gib dabei möglichst an:
 - PHP‑Version
 - Genaue Beschreibung des Problems bzw. der Anfrage
 - Schritte zur Reproduktion (falls es sich um einen Fehler handelt)
+
+---
+
+_Stand der Dokumentation: 2025‑11‑30_
 
