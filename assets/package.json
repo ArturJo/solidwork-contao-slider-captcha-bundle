@@ -1,0 +1,15 @@
+{
+  "name": "solidwork-contao-slider-captcha-bundle",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:ts": "tsc",
+    "build:scss": "sass scss:../public/slider-captcha",
+    "build": "npm run build:ts && npm run build:scss",
+    "watch": "tsc --watch & sass --watch scss:../public/slider-captcha"
+  },
+  "devDependencies": {
+    "sass": "^1.71.1",
+    "typescript": "^5.4.0"
+  }
+}

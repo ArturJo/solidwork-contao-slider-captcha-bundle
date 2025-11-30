@@ -1,0 +1,6 @@
+services:
+  Solidwork\ContaoSliderCaptchaBundle\Validator\SliderCaptchaValidator:
+    tags:
+      - { name: contao.hook, hook: validateFormField, method: validate }
+  Solidwork\ContaoSliderCaptchaBundle\FormField\SliderCaptchaField:
+    public: true
