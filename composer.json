@@ -18,6 +18,10 @@
       "Solidwork\\ContaoSliderCaptchaBundle\\": "src/"
     }
   },
+  "support": {
+    "source": "https://github.com/ArturJo/solidwork-contao-slider-captcha-bundle",
+    "issues": "https://github.com/ArturJo/solidwork-contao-slider-captcha-bundle/issues"
+  },
   "extra": {
     "contao-manager-plugin": "Solidwork\\ContaoSliderCaptchaBundle\\ContaoManager\\Plugin"
   },
