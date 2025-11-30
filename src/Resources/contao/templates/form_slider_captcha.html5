@@ -1,0 +1,9 @@
+<?php /*
+ * Template: form_slider_captcha
+ * Bundle: solidwork/contao-slider-captcha-bundle
+ */ ?>
+
+<input type="hidden" name="<?= $this->name ?>" id="<?= $this->name ?>" value="0">
+<div class="sw-slider-captcha-track" data-slider-track>
+    <div class="sw-slider-captcha-handle" data-slider-handle></div>
+</div>

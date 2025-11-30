@@ -19,14 +19,10 @@ class SliderCaptchaField extends Widget
 
     public function generate()
     {
-
         $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/solidworkcontaoslidercaptchabundle/slider-captcha/slider-captcha.js|static';
         $GLOBALS['TL_CSS'][] = 'bundles/solidworkcontaoslidercaptchabundle/slider-captcha/slider-captcha.css|static';
 
-
-        return sprintf('<input type="hidden" name="%s" id="%s" value="0">
-  <div class="sw-slider-captcha-track" data-slider-track>
-   <div class="sw-slider-captcha-handle" data-slider-handle></div>
-  </div>', $this->name, $this->name);
+        // Render das Widget über das zugewiesene Contao-Template (inkl. Unterstützung für customTpl)
+        return $this->parse();
     }
 }
