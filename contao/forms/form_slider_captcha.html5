@@ -1,3 +1,0 @@
-<div class="sw-slider-captcha-wrapper">
-<?= $this->generate(); ?>
-</div>

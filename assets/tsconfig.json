@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES6",
     "rootDir": "./ts",
-    "outDir": "../public/slider-captcha",
+    "outDir": "../src/Resources/public/slider-captcha",
     "strict": true
   },
   "include": [

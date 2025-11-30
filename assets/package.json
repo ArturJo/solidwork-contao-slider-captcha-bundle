@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "build:ts": "tsc",
-    "build:scss": "sass scss:../public/slider-captcha",
+    "build:scss": "sass scss:../src/Resources/public/slider-captcha",
     "build": "npm run build:ts && npm run build:scss",
-    "watch": "tsc --watch & sass --watch scss:../public/slider-captcha"
+    "watch": "tsc --watch & sass --watch scss:../src/Resources/public/slider-captcha"
   },
   "devDependencies": {
     "sass": "^1.71.1",

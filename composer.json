@@ -1,7 +1,7 @@
 {
   "name": "solidwork/contao-slider-captcha-bundle",
   "type": "contao-bundle",
-  "description": "Slider CAPTCHA Formularfeld f\u00fcr Contao 4.13 und 5.3.",
+  "description": "Slider CAPTCHA Formularfeld f\u00fcr Contao 4.13.",
   "keywords": [
     "contao",
     "captcha",
@@ -11,7 +11,7 @@
   "license": "LGPL-3.0-or-later",
   "require": {
     "php": ">=7.4",
-    "contao/core-bundle": ">=4.13 || >=5.3"
+    "contao/core-bundle": "^4.13"
   },
   "autoload": {
     "psr-4": {
